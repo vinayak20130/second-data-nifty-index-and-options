@@ -4,9 +4,15 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { KiteModule } from './kite/kite.module';
 import { DatabaseModule } from './database/database.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [UsersModule, KiteModule, DatabaseModule],
+  imports: [
+    UsersModule,
+    KiteModule,
+    DatabaseModule,
+    ConfigModule.forRoot({ isGlobal: true }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
