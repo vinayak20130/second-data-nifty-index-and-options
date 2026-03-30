@@ -19,6 +19,6 @@ export class User {
 
   // this expires daily at 7:30 am so user needs to login every day
 
-  @Column({ length: 500 })
+  @Column({ length: 500, nullable: true })
   kiteaccesstoken?: string;
 }
